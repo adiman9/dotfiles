@@ -4,6 +4,7 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 set diffexpr=MyDiff()
+
 function MyDiff()
   let opt = '-a --binary '
   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
@@ -28,13 +29,18 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+" Set the colorscheme
 colorscheme monokai
 
+" Set the hybrid numbering system. Shows absolute number of current line plus
+" relative numbers of all other lines.
 set relativenumber
 set number
 
+" Enable syntax highlighting
 syntax enable
 
+" Key Mappings
 imap jk <Esc>
 nmap <C-S> :w<CR>
 imap <C-S> <Esc>:w<CR>
