@@ -40,6 +40,18 @@ set number
 " Enable syntax highlighting
 syntax enable
 
+" Text, tab and Indent related
+set expandtab
+set smarttab
+
+"making tab = 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+set ai "auto indent
+set si "smart indent
+set wrap "Wrap lines
+
 " Key Mappings
 imap jk <Esc>
 nmap <C-S> :w<CR>
