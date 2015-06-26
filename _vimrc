@@ -61,10 +61,22 @@ set smarttab
 "making tab = 4 spaces
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 
 " Linebreak on 500 characters
 set lbr
 set tw=500
+
+set showcmd "show command in bottom bar
+
+set cursorline "highlight current line
+
+set lazyredraw "redraw only when we need to
+
+set foldenable "enable folding
+set foldlevelstart=10 "open most folds by default
+set foldnestmax=10 "10 nested folds max
+set foldmethod = indent "fold based on indent level
 
 set ai "auto indent
 set si "smart indent
@@ -122,3 +134,7 @@ endfunction
 imap jk <Esc>
 nmap <C-S> :w<CR>
 imap <C-S> <Esc>:w<CR>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
