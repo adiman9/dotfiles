@@ -30,7 +30,7 @@ function MyDiff()
 endfunction
 
 " Set the colorscheme
-colorscheme monokai
+colorscheme default
 
 " Set the hybrid numbering system. Shows absolute number of current line plus
 " relative numbers of all other lines.
