@@ -133,8 +133,16 @@ endfunction
 " Key Mappings
 imap jk <Esc>
 nmap <C-S> :w<CR>
+nmap :Q :q
 imap <C-S> <Esc>:w<CR>
 
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+" Autocompleting brackets and quotes
+inoremap { {<CR>}<Esc>ko<tab>
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
