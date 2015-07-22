@@ -135,13 +135,15 @@ imap jk <Esc>
 nmap <C-S> :w<CR>
 nmap :Q :q
 imap <C-S> <Esc>:w<CR>
+imap ;; <Esc><S-A>;
+nmap ;; <S-A>;<Esc>
 
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
 
 " Autocompleting brackets and quotes
-inoremap { {<CR>}<Esc>ko<tab>
+inoremap { {<CR>}<Esc>ko
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
