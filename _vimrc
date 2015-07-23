@@ -132,8 +132,6 @@ endfunction
 
 let mapleader=","
 
-
-
 " Key Mappings
 imap jk <Esc>
 nmap <C-S> :w<CR>
@@ -152,3 +150,5 @@ inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
