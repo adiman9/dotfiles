@@ -130,6 +130,10 @@ function! HasPaste()
     return ''
 endfunction
 
+let mapleader=","
+
+
+
 " Key Mappings
 imap jk <Esc>
 nmap <C-S> :w<CR>
