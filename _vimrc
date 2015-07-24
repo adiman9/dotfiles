@@ -130,15 +130,15 @@ function! HasPaste()
     return ''
 endfunction
 
-let mapleader=","
+let mapleader=" "
 
 " Key Mappings
-imap jk <Esc>
-nmap <C-S> :w<CR>
-nmap :Q :q
-imap <C-S> <Esc>:w<CR>
-imap ;; <Esc><S-A>;
-nmap ;; <S-A>;<Esc>
+inoremap jk <Esc>
+nnoremap <C-S> :w<CR>
+nnoremap :Q :q
+inoremap <C-S> <Esc>:w<CR>
+inoremap <leader>; <Esc><S-A>;
+nnoremap <leader>; <S-A>;<Esc>
 
 " move vertically by visual line
 nnoremap j gj
@@ -151,4 +151,9 @@ inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>ww <C-w>w
+nnoremap <leader>wq <C-w>q
+
+inoremap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
