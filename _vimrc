@@ -31,6 +31,7 @@ endfunction
 
 " Set the colorscheme
 colorscheme default
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
 " Set the hybrid numbering system. Shows absolute number of current line plus
 " relative numbers of all other lines.
@@ -156,4 +157,4 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>ww <C-w>w
 nnoremap <leader>wq <C-w>q
 
-inoremap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
