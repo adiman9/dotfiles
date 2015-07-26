@@ -152,9 +152,16 @@ inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
+" Creating and moving in Splits
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>wv <C-w>v
 nnoremap <leader>ww <C-w>w
 nnoremap <leader>wq <C-w>q
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
