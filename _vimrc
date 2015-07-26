@@ -29,15 +29,6 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-" Set the colorscheme
-colorscheme default
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=white
-
-" Set the hybrid numbering system. Shows absolute number of current line plus
-" relative numbers of all other lines.
-set relativenumber
-set number
-
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Consolas 8
@@ -51,6 +42,24 @@ if has("gui_running")
     set guifont=Consolas:h8:cDEFAULT
   endif
 endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""    START CUSTOM SETTINGS
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let mapleader=" "
+
+" Set the colorscheme
+colorscheme default
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=white
+
+" Set the hybrid numbering system. Shows absolute number of current line plus
+" relative numbers of all other lines.
+set relativenumber
+set number
 
 " Enable syntax highlighting
 syntax enable
@@ -97,7 +106,7 @@ set nobackup
 set nowb
 set noswapfile
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
@@ -131,13 +140,25 @@ function! HasPaste()
     return ''
 endfunction
 
-let mapleader=" "
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Key Mappings
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"make jk the hotkey to return to normal mode"
 inoremap jk <Esc>
+
+" Cntl + S to save in normal and insert mode"
 nnoremap <C-S> :w<CR>
-nnoremap :Q :q
 inoremap <C-S> <Esc>:w<CR>
+
+"Ensure holding shift down too long and getting capital Q on file exit
+"Doesnt make me want to kill babies
+nnoremap :Q :q
+
+"Add ; to end of line in normal and insert mode"
 inoremap <leader>; <Esc><S-A>;
 nnoremap <leader>; <S-A>;<Esc>
 
@@ -164,4 +185,5 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"Mapping tab to be emmet expander key"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
