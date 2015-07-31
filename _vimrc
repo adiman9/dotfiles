@@ -185,5 +185,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+"quickly enter vim commands
+inoremap <leader>jk <Esc>:
+
+"auto edit vimrc
+nnoremap <leader>vim :e $MYVIMRC<CR>
+
 "Mapping tab to be emmet expander key"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
