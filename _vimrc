@@ -180,16 +180,19 @@ nnoremap <leader>ww <C-w>w
 nnoremap <leader>wq <C-w>q
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
 
 "quickly enter vim commands
 inoremap <leader>jk <Esc>:
 
 "auto edit vimrc
 nnoremap <leader>vim :e $MYVIMRC<CR>
+
+"Easy close
+nnoremap <leader>q :q<CR>
 
 "Mapping tab to be emmet expander key"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
