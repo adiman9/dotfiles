@@ -194,5 +194,8 @@ nnoremap <leader>vim :e $MYVIMRC<CR>
 "Easy close
 nnoremap <leader>q :q<CR>
 
+"open new file easily
+nnoremap <leader>o :e<space>
+
 "Mapping tab to be emmet expander key"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
