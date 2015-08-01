@@ -197,5 +197,9 @@ nnoremap <leader>q :q<CR>
 "open new file easily
 nnoremap <leader>o :e<space>
 
+"open new file in splits
+nnoremap <leader>v :vsplit<space>
+nnoremap <leader>s :split<space>
+
 "Mapping tab to be emmet expander key"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
