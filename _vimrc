@@ -3,6 +3,8 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
+execute pathogen#infect()
+
 set diffexpr=MyDiff()
 
 function MyDiff()
@@ -52,8 +54,9 @@ endif
 
 let mapleader=" "
 
+set t_Co=256
 " Set the colorscheme
-colorscheme monokai
+colorscheme mopkai
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
 " Set the hybrid numbering system. Shows absolute number of current line plus
