@@ -53,7 +53,7 @@ endif
 let mapleader=" "
 
 " Set the colorscheme
-colorscheme default
+colorscheme monokai
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
 " Set the hybrid numbering system. Shows absolute number of current line plus
@@ -151,8 +151,8 @@ endfunction
 inoremap jk <Esc>
 
 " Cntl + S to save in normal and insert mode"
-nnoremap <C-S> :w<CR>
-inoremap <C-S> <Esc>:w<CR>
+nnoremap <leader>w :w<CR>
+inoremap <leader>w <Esc>:w<CR>
 
 "Ensure holding shift down too long and getting capital Q on file exit
 "Doesnt make me want to kill babies
@@ -172,12 +172,6 @@ inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
-
-" Creating and moving in Splits
-nnoremap <leader>ws <C-w>s
-nnoremap <leader>wv <C-w>v
-nnoremap <leader>ww <C-w>w
-nnoremap <leader>wq <C-w>q
 
 " Quicker window movement
 nnoremap <leader>j <C-w>j
