@@ -1,45 +1,10 @@
 vim74
-.Private
-.Xauthority
-.Xdefaults
-.bash_history
-.bash_logout
-.cache/
-.config/
-.ecryptfs
-.gconf
-.gnome
-.gstreamer-0.10/
-.local/
-.mozilla/
-.pki/
-.profile
-.thumbnails/
-.viminfo
-.xscreensaver
-.xsession-errors
-.xsession-errors.old
-Desktop/
 Downloads/
-.ICEauthority
-.gitconfig
-<<<<<<< HEAD
-.conky/
-.dmrc
-.fonts/
-.ilg-config
-.macromedia/
-.npm/
-.ssh/
-.sudo_as_admin_successful
-.xprofile
 Code Projects/
 Web Dev/
 encryption key
 hosts.txt
 npm-debug.log
 sslstrip.log
-=======
-.dbus/
-.rnd
->>>>>>> 046d4bf17f93b5ac0aef443c19a36ed170ad8f66
+.*
+..*
