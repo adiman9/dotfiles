@@ -22,5 +22,19 @@ vim74
 Desktop/
 Downloads/
 .ICEauthority
-.bashrc
 .gitconfig
+.conky/
+.dmrc
+.fonts/
+.ilg-config
+.macromedia/
+.npm/
+.ssh/
+.sudo_as_admin_successful
+.xprofile
+Code Projects/
+Web Dev/
+encryption key
+hosts.txt
+npm-debug.log
+sslstrip.log
