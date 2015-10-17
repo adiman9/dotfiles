@@ -23,6 +23,7 @@ Desktop/
 Downloads/
 .ICEauthority
 .gitconfig
+<<<<<<< HEAD
 .conky/
 .dmrc
 .fonts/
@@ -38,3 +39,7 @@ encryption key
 hosts.txt
 npm-debug.log
 sslstrip.log
+=======
+.dbus/
+.rnd
+>>>>>>> 046d4bf17f93b5ac0aef443c19a36ed170ad8f66
