@@ -154,8 +154,8 @@ endfunction
 inoremap jk <Esc>
 
 " Cntl + S to save in normal and insert mode"
-nnoremap <leader>w :w<CR>
-inoremap <leader>w <Esc>:w<CR>
+nnoremap <leader>ww :w<CR>
+inoremap <leader>ww <Esc>:w<CR>
 
 "Ensure holding shift down too long and getting capital Q on file exit
 "Doesnt make me want to kill babies
