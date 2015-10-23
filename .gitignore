@@ -1,10 +1,11 @@
-vim74
-Downloads/
-Code Projects/
-Web Dev/
-encryption key
-hosts.txt
-npm-debug.log
-sslstrip.log
-.*
-..*
+gnore everything
+*
+# Now, whitelist anything that's a directory
+!*/
+# And all the file types you're interested in.
+!.bashrc
+!.vim/
+!.gitignore
+!_vimrc
+!.tmux.conf
+
