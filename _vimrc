@@ -184,6 +184,7 @@ nnoremap <leader>l <C-w>l
 
 "quickly enter vim commands
 inoremap <leader>jk <Esc>:
+inoremap <leader>JK <Esc>:
 
 "auto edit vimrc
 nnoremap <leader>vim :e $MYVIMRC<CR>
