@@ -94,6 +94,7 @@ alias l='ls -CF'
 alias tmux='tmux -2'
 alias node='nodejs'
 alias 'sshadi'='ssh adiman999@adrianhenrydev.com'
+alias 'ssht'='ssh root@104.131.4.253'
 alias 'rsoy'='rsync ~/"Web Dev"/projects/"oyatsu box"/Wordpress adiman999@adrianhenrydev.com:~/public_html/testsite/oyatsuwp/wp-content/themes/oyatsu'
 
 # Add an "alert" alias for long running commands.  Use like so:

@@ -157,13 +157,14 @@ inoremap jk <Esc>
 nnoremap <leader>ww :w<CR>
 inoremap <leader>ww <Esc>:w<CR>
 
-"Ensure holding shift down too long and getting capital Q on file exit
-"Doesnt make me want to kill babies
-nnoremap :Q :q
-
 "Add ; to end of line in normal and insert mode"
 inoremap <leader>; <Esc><S-A>;
 nnoremap <leader>; <S-A>;<Esc>
+" Add ; to line below
+inoremap ;j <Esc>j<S-A>;<Esc>ki<tab>
+nnoremap ;j j<S-A>;<Esc>k
+"Add ; to end of the line then move back a char
+inoremap a; <Esc><S-A>;<Esc>hi
 
 " move vertically by visual line
 nnoremap j gj
@@ -171,10 +172,15 @@ nnoremap k gk
 
 " Autocompleting brackets and quotes
 inoremap { {<CR>}<Esc>ko
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
+" Angular Expression keymap
+inoremap N{ {{}}<Esc>hi
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap ' ''<Esc>:let leavechar="'"<CR>i
+inoremap " ""<Esc>:let leavechar="""<CR>i
+
+" Jump to outside brackets or quotes
+imap JO <Esc>:exec "normal f" . leavechar<CR>a
 
 " Quicker window movement
 nnoremap <leader>j <C-w>j
@@ -191,6 +197,7 @@ nnoremap <leader>vim :e $MYVIMRC<CR>
 
 "Easy close
 nnoremap <leader>q :q<CR>
+nnoremap <leader><leader>q :q!<CR>
 
 "open new file easily
 nnoremap <leader>o :e<space>
@@ -201,3 +208,20 @@ nnoremap <leader>s :split<space>
 
 "Mapping tab to be emmet expander key"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+nmap s <Plug>(easymotion-overwin-f)
+nmap s <Plug>(easymotion-overwin-f2)
+
+let g:EasyMotion_smartcase = 1
+
+map <leader><leader>j <Plug>(easymotion-j)
+map <leader><leader>k <Plug>(easymotion-k)
+
+" enabling key map to allow cntl+c/v copy pasting
+vnoremap <C-c> "+y
+vnoremap <C-c><C-c> "+yy
+inoremap <C-v> <Esc>"+p
+nnoremap <C-v> "+p
+
