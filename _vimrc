@@ -164,14 +164,16 @@ nnoremap <leader>; <S-A>;<Esc>
 inoremap ;j <Esc>j<S-A>;<Esc>ki<tab>
 nnoremap ;j j<S-A>;<Esc>k
 "Add ; to end of the line then move back a char
-inoremap a; <Esc><S-A>;<Esc>hi
+inoremap a; <Esc><S-A>;<Esc>hi{<CR>}<Esc>O
+inoremap i{ <Esc>A{<CR>}<Esc>O
+inoremap I{ <Esc>A{<CR>}<Esc>O
 
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
 
 " Autocompleting brackets and quotes
-inoremap { {<CR>}<Esc>ko
+inoremap { {<CR>}<Esc>O
 " Angular Expression keymap
 inoremap N{ {{}}<Esc>hi
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
