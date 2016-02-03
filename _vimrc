@@ -143,6 +143,19 @@ function! HasPaste()
     return ''
 endfunction
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+let g:used_javascript_libs = 'jquery, angularjs, angularui, angularuirouter, react, flux, jasmine'
+
+ if has("autocmd") && exists("+omnifunc") 
+autocmd Filetype * 
+    \	if &omnifunc == "" | 
+    \	setlocal omnifunc=syntaxcomplete#Complete | 
+    \	endif 
+    endif 
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -160,9 +173,6 @@ inoremap <leader>ww <Esc>:w<CR>
 "Add ; to end of line in normal and insert mode"
 inoremap <leader>; <Esc><S-A>;
 nnoremap <leader>; <S-A>;<Esc>
-" Add ; to line below
-inoremap ;j <Esc>j<S-A>;<Esc>ki<tab>
-nnoremap ;j j<S-A>;<Esc>k
 "Add ; to end of the line then move back a char
 inoremap a; <Esc><S-A>;<Esc>hi{<CR>}<Esc>O
 inoremap i{ <Esc>A{<CR>}<Esc>O

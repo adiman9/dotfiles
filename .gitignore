@@ -2,7 +2,7 @@ gnore everything
 *
 # And all the file types you're interested in.
 !.bashrc
-!.vim/
+!.vim/*
 !.gitignore
 !_vimrc
 !.tmux.conf
