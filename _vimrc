@@ -1,3 +1,15 @@
+"********* Installed Plugins ***********
+"
+"    Git clone these into .vim/bundle/ on new machines
+"
+"
+"    neocomplete
+"    vim-commentary
+"    vim-easymotion
+"    javascript-libraries-syntax
+"
+"
+
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
