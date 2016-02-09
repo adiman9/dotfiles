@@ -3,10 +3,16 @@
 "    Git clone these into .vim/bundle/ on new machines
 "
 "
-"    neocomplete
+"    neocomplete/youcompleteme
 "    vim-commentary
 "    vim-easymotion
 "    javascript-libraries-syntax
+"    ctrlP
+"    vim-airline
+"    vim-surround
+"    fugitive
+"    vim-javascript
+"    syntastic
 "
 "
 
@@ -76,6 +82,9 @@ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=whit
 set relativenumber
 set number
 
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
 " Enable syntax highlighting
 syntax enable
 
@@ -101,7 +110,7 @@ set lazyredraw "redraw only when we need to
 set foldenable "enable folding
 set foldlevelstart=10 "open most folds by default
 set foldnestmax=10 "10 nested folds max
-set foldmethod=indent "fold based on indent level
+set foldmethod=syntax "fold based on indent level
 
 set ai "auto indent
 set si "smart indent
@@ -154,6 +163,15 @@ function! HasPaste()
     en
     return ''
 endfunction
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
@@ -273,4 +291,12 @@ vnoremap <C-c> "+y
 vnoremap <C-c><C-c> "+yy
 inoremap <C-v> <Esc>"+p
 nnoremap <C-v> "+p
+
+" /**/ style commenting
+inoremap comjs /*<CR><CR><BS>/<Esc>kA<space>
+nnoremap comjs i/*<CR><CR><BS>/<Esc>kA<space>
+
+" HTML commenting
+inoremap comht <!--<space><space>--><Esc>hhhi
+nnoremap comht i<!--<space><space>--><Esc>hhhi
 
