@@ -1,58 +1,37 @@
-"********* Installed Plugins ***********
-"
-"    Git clone these into .vim/bundle/ on new machines
-"
-"
-"    neocomplete/youcompleteme
-"    vim-commentary
-"    vim-easymotion
-"    javascript-libraries-syntax
-"    ctrlP
-"    vim-airline
-"    vim-surround
-"    fugitive
-"    vim-javascript
-"    syntastic
-"
-"    in .vim/bundle
-"
-"    git clone https://github.com/tpope/vim-commentary && git clone https://github.com/easymotion/vim-easymotion && git clone https://github.com/othree/javascript-libraries-syntax.vim && git clone https://github.com/kien/ctrlp.vim
-"    && git clone https://github.com/vim-airline/vim-airline && git clone https://github.com/tpope/vim-surround && git clone https://github.com/tpope/vim-fugitive && git clone https://github.com/pangloss/vim-javascript
-"    && git clone https://github.com/scrooloose/syntastic
+"    git clone https://github.com/tpope/vim-commentary 
+"    git clone https://github.com/othree/javascript-libraries-syntax.vim 
+"    git clone https://github.com/tpope/vim-surround 
+"    git clone https://github.com/pangloss/vim-javascript
 "
 
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+filetype off  
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
-set diffexpr=MyDiff()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/syntastic'
+    
+
+call vundle#end()  
+filetype plugin indent on 
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -92,6 +71,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " Enable syntax highlighting
 syntax enable
+
+"Enable yanking to system clipboard
+set clipboard=unnamedplus
 
 " Text, tab and Indent related
 set expandtab
@@ -178,6 +160,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_python_checkers = ['eslint']
+
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
@@ -216,12 +200,45 @@ autocmd Filetype *
     endif 
 
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+"Change working directory to directory of currently open file
+autocmd BufEnter * silent! lcd %:p:h
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Key Mappings
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"inoremap i{ <Esc>A{<CR>}<Esc>O
+"inoremap I{ <Esc>A{<CR>}<Esc>O
+"
+" Autocompleting brackets and quotes
+"inoremap { {<CR>}<Esc>O
+" Angular Expression keymap
+"inoremap N{ {{}}<Esc>hi
+"inoremap ( ()<Esc>:let leavechar=")"<CR>i
+"inoremap [ []<Esc>:let leavechar="]"<CR>i
+"inoremap ' ''<Esc>:let leavechar="'"<CR>i
+"inoremap " ""<Esc>:let leavechar="""<CR>i
+
+" Jump to outside brackets or quotes
+"imap JO <Esc>:exec "normal f" . leavechar<CR>a
+
+"noremap a; <Esc><S-A>;<Esc>hi{<CR>}<Esc>O
+
+
+
+
+
+
+
+
 
 "make jk the hotkey to return to normal mode"
 inoremap jk <Esc>
@@ -234,25 +251,10 @@ inoremap <leader>ww <Esc>:w<CR>
 inoremap <leader>; <Esc><S-A>;
 nnoremap <leader>; <S-A>;<Esc>
 "Add ; to end of the line then move back a char
-inoremap a; <Esc><S-A>;<Esc>hi{<CR>}<Esc>O
-inoremap i{ <Esc>A{<CR>}<Esc>O
-inoremap I{ <Esc>A{<CR>}<Esc>O
 
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-
-" Autocompleting brackets and quotes
-inoremap { {<CR>}<Esc>O
-" Angular Expression keymap
-inoremap N{ {{}}<Esc>hi
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap ' ''<Esc>:let leavechar="'"<CR>i
-inoremap " ""<Esc>:let leavechar="""<CR>i
-
-" Jump to outside brackets or quotes
-imap JO <Esc>:exec "normal f" . leavechar<CR>a
 
 " Quicker window movement
 nnoremap <leader>j <C-w>j
@@ -305,3 +307,9 @@ nnoremap comjs i/*<CR><CR><BS>/<Esc>kA<space>
 inoremap comht <!--<space><space>--><Esc>hhhi
 nnoremap comht i<!--<space><space>--><Esc>hhhi
 
+" Fugitive Shortcuts
+"""""""""""""""""""""""""""""""""""""
+nmap <silent> <leader>gs :Gstatus<cr>
+nmap <leader>df :Gdiff<cr>
+"nmap <silent><leader>gr :Gread<cr>
+nmap <silent><leader>gb :Gblame<cr>
