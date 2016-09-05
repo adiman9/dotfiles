@@ -39,7 +39,9 @@ fi
 case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
-
+if [ "$TERM" = "xterm" ]; then
+  export TERM=xterm-256color
+fi
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -57,9 +59,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="\[$(tput bold)\]\[\033[38;5;46m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;33m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
+    PS1="\[$(tput bold)\]\[\033[38;5;46m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;33m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 fi
 unset color_prompt force_color_prompt
 
@@ -95,9 +99,11 @@ alias tmux='tmux -2'
 alias node='nodejs'
 alias 'sshadi'='ssh adiman999@adrianhenrydev.com'
 alias 'ssht'='ssh root@104.131.4.253'
-alias 'rsoy'='rsync ~/"Web Dev"/projects/"oyatsu box"/Wordpress adiman999@adrianhenrydev.com:~/public_html/testsite/oyatsuwp/wp-content/themes/oyatsu'
 alias 'ht'='cd /var/www/html/wp-content/themes/hungryturtledev/'
 alias 'home'='cd /var/www/html'
+alias 'metavnc'='ssh -L 5901:127.0.0.1:5901 -N -f -l adiman 46.101.83.21; xtightvncviewer localhost:5901'
+alias tmux='tmux -2'
+alias tmdev='sh ~/scripts/tmux-dev.sh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

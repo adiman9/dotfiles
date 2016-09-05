@@ -1,6 +1,8 @@
 gnore everything
 *
 # And all the file types you're interested in.
+!scripts/*
+!/scripts/
 !.bashrc
 !.vim/*
 !.gitignore

@@ -28,7 +28,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
-    
+Plugin 'christoomey/vim-tmux-navigator'    
 
 call vundle#end()  
 filetype plugin indent on 
@@ -237,7 +237,9 @@ autocmd BufEnter * silent! lcd %:p:h
 
 
 
-
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprev<CR>
+nnoremap <leader>bq :bp<bar>sp<bar>bn<bar>bd<CR>
 
 
 "make jk the hotkey to return to normal mode"
