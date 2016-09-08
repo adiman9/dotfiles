@@ -6,8 +6,6 @@
 
 set nocompatible
 filetype off  
-source $VIMRUNTIME/mswin.vim
-behave mswin
 
 "execute pathogen#infect()
 
@@ -27,11 +25,13 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'    
+Plugin 'tpope/vim-commentary'
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()  
-filetype plugin indent on 
+" filetype plugin indent on 
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -71,6 +71,15 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " Enable syntax highlighting
 syntax enable
+
+let g:UltiSnipsEditSplit="vertical"
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 "Enable yanking to system clipboard
 set clipboard=unnamedplus
@@ -201,14 +210,11 @@ autocmd Filetype *
 
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd vimenter * NERDTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
-"Change working directory to directory of currently open file
-autocmd BufEnter * silent! lcd %:p:h
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -283,7 +289,7 @@ nnoremap <leader>v :vsplit<space>
 nnoremap <leader>s :split<space>
 
 "Mapping tab to be emmet expander key"
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -301,13 +307,9 @@ vnoremap <C-c><C-c> "+yy
 inoremap <C-v> <Esc>"+p
 nnoremap <C-v> "+p
 
-" /**/ style commenting
-inoremap comjs /*<CR><CR><BS>/<Esc>kA<space>
-nnoremap comjs i/*<CR><CR><BS>/<Esc>kA<space>
-
-" HTML commenting
-inoremap comht <!--<space><space>--><Esc>hhhi
-nnoremap comht i<!--<space><space>--><Esc>hhhi
+"commenting
+nmap <C-_> gcc
+nmap co gc
 
 " Fugitive Shortcuts
 """""""""""""""""""""""""""""""""""""

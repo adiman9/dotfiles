@@ -104,6 +104,10 @@ alias 'home'='cd /var/www/html'
 alias 'metavnc'='ssh -L 5901:127.0.0.1:5901 -N -f -l adiman 46.101.83.21; xtightvncviewer localhost:5901'
 alias tmux='tmux -2'
 alias tmdev='sh ~/scripts/tmux-dev.sh'
+alias socpush='cd ~/Code\ Projects/Social\ Studies/webApp/ && npm run build && cp -r ~/Code\ Projects/Social\ Studies/webApp/images ~/Code\ Projects/Social\ Studies/webApp/build && rsync -av ~/Code\ Projects/Social\ Studies/webApp/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/socialstudies'
+alias bashrc='vim ~/.bashrc'
+alias code='cd ~/Code\ Projects/'
+alias sourcebash='source ~/.bashrc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
