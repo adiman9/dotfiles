@@ -9,4 +9,5 @@ gnore everything
 !_vimrc
 !.tmux.conf
 !.gitconfig
+!.zshrc
 
