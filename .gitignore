@@ -8,4 +8,5 @@ gnore everything
 !.gitignore
 !_vimrc
 !.tmux.conf
+!.gitconfig
 

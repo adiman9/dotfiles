@@ -1,0 +1,10 @@
+[user]
+	name = Adrian
+	email = adimandevelopment@gmail.com
+[credential]
+	helper = cache
+[alias]
+	co = checkout
+	cob = checkout -b
+    cm = !git add -A && git commit -m
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
