@@ -1,0 +1,155 @@
+snippet todo "Javascript TODO reminder" b
+// TODO ${1:desc} `!v strftime("%c")`
+endsnippet
+
+snippet ngcomp "Angular Component in ES6" b
+const ${1:ComponentName} = {
+bindings: {
+	${2:Name}: '<'
+},
+template: \`
+		$0
+  \`
+};
+
+export default $1;
+endsnippet
+
+snippet ngcont "Angular controller in ES6"
+class ${1:ControllerName}{
+	constructor($2) {
+		$3
+	}
+	$onInit() {
+		$0
+	}
+}
+
+export default $1;
+endsnippet
+
+snippet class "Javascript ES6 Class"
+class ${1:ClassName}{
+  constructor($2) {
+	$0
+  }
+}
+
+export default $1;
+endsnippet
+
+snippet ngindex "Index page to register something in Angular"
+import angular from 'angular';
+import ${1:ComponentName} from './${2:componentfile}.$3';
+$0
+
+const $1Component = angular
+  .module('$1', [])
+  .$4('$1', $1)
+  .name;
+
+export default $1Component;
+endsnippet
+
+snippet ngdir "Angular Directive in ES6 using const"
+import angular from 'angular';
+
+const ${1:DirectiveName}= ($2) => ({
+  restrict: 'A',
+  link($scope, $element, $attrs) {
+	$0
+  }
+});
+
+$1.$inject = ['$2'];
+
+export default $1;
+endsnippet
+
+snippet ngdirclass "Angular Directive in ES6 using class"
+import angular from 'angular';
+
+class ${1:DirectiveName}{
+  constructor($2) {
+    this.restrict = 'A';
+	// Using this. to add any injected params to the class
+  }
+  link($scope, $element, $attrs) {
+	$0
+  }
+}
+
+TodoAutoFocus.$inject = ['$2'];
+
+export default $1;
+endsnippet
+
+snippet ngtest "A describe block for angular testing"
+import ${1:testSubjectModule} from './index.js';
+import 'angular-mocks';
+import 'karma-sinon';
+
+import {expect} from 'chai';
+
+let controller, scope, element;
+
+describe('${2:What To Test}', function(){
+    beforeEach(angular.mock.module('${3:testModule}')); //eslint-disable-line
+
+    beforeEach(inject(function(${4:$rootScope}, ${5:$componentController}){//eslint-disable-line
+      scope = $rootScope.$new();
+      controller = $componentController('${6:controllerName}', {$scope: scope}, {${7:Bindings}});
+
+    }));
+
+    it('should be attached to scope', function(){
+      expect(scope.$ctrl).to.equal(controller);
+    });
+
+});
+endsnippet
+
+snippet jstest "A standard JS test with Mocha and Chai"
+import ${1:TestSubject} from './${2:fileToTest}';
+
+import {expect} from 'chai';
+
+let ${3:variables};
+
+describe('${4:What To Test}', function(){
+
+  beforeEach(function() {
+    controller = new $1();
+	// $onInit is require for Angular Component Controller tests
+    //controller.$onInit();
+  });
+
+  it('should have intial variables', function() {
+    expect(controller.${5:variable}).to.be.false;
+    expect(controller.${0:variable}).to.equal('');
+  });
+
+});
+endsnippet
+
+snippet fn "A standard ES5 JS function"
+function ${1:functionName}(${2:functionArgs}){
+	$0
+}
+endsnippet
+
+snippet iife "IIFE"
+(function(){
+	$0
+})();
+endsnippet
+
+snippet it "it statement for JS testing"
+it('${1:Test clause}', function(){
+	expect(${0:expectation}).to.be.false;
+});
+endsnippet
+
+snippet cl "add a console.log statement"
+console.log($0);
+endsnippet
