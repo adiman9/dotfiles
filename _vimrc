@@ -25,7 +25,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'    
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
@@ -82,7 +82,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 "Enable yanking to system clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " Text, tab and Indent related
 set expandtab
@@ -199,6 +199,9 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" Javascript formatting using Prettier
+autocmd FileType javascript set formatprg=prettier\ --stdin
+
 let g:used_javascript_libs = 'jquery, angularjs, angularui, angularuirouter, react, flux, jasmine'
 
  if has("autocmd") && exists("+omnifunc") 
@@ -215,6 +218,9 @@ autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
+
+
+command! Maketags !ctags -R --exclude=.git --exclude=node_modules
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
