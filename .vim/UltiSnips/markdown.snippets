@@ -1,0 +1,23 @@
+snippet hi "Code Highlight" b
+{% highlight ${1:lang} linenos%}
+${2:code}
+{% endhighlight %}
+endsnippet
+
+snippet vid "Youtube Video Embed" b
+{% include embed-video.html videoID="${1:videoID}" %}
+endsnippet
+
+snippet img "Image markdown" b
+![${1:alt}](${2:url}){: class="${3:class}" width="${4:width}" height="${5:height}"}
+endsnippet
+
+snippet urlt "Url with target blank" b
+[${1:text}](${2:url}){: target="_blank"}<!--_-->
+endsnippet
+
+snippet url "url" b
+[${1:text}](${2:url})
+endsnippet
+
+
