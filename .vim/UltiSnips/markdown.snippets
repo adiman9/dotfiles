@@ -1,7 +1,13 @@
 snippet hi "Code Highlight" b
-{% highlight ${1:lang} linenos%}
+{% highlight ${1:lang} linenos%}{% raw %}
 ${2:code}
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
+endsnippet
+
+snippet inhi "Inline Code Highlight" b
+{% ihighlight ${1:lang} linenos%}{% raw %}
+${2:code}
+{% endraw %}{% endihighlight %}
 endsnippet
 
 snippet vid "Youtube Video Embed" b
@@ -18,6 +24,10 @@ endsnippet
 
 snippet url "url" b
 [${1:text}](${2:url})
+endsnippet
+
+snippet raw "raw liquid" b
+{% raw %}${1:}{% endraw %}
 endsnippet
 
 
