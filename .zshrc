@@ -104,3 +104,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PATH=${HOME}/.pyenv/versions/2.7.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export HEADSPIN_HOME=$HOME/headspinio
+. $HEADSPIN_HOME/devtools/etc/bash_profile
+
+export WORKON_HOME=$HOME/.virtualenvs
+. $HOME/.pyenv/versions/2.7.10/bin/virtualenvwrapper.sh
+workon headspin
+
+# ssh-add $HEADSPIN_HOME/keys-red/pbox_id_rsa 2>/dev/null
+export PATH="/usr/local/sbin:$PATH"
+
+eval "$(pyenv init -)"

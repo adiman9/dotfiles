@@ -1,6 +1,6 @@
 [user]
-	name = Adrian
-	email = adimandevelopment@gmail.com
+	name = Adrian Henry
+	email = adrian@headspin.io
 [credential]
 	helper = cache
 [alias]
@@ -19,3 +19,5 @@
     r = reset
     r1 = reset HEAD^
     r2 = reset HEAD^^
+[pull]
+	rebase = true
