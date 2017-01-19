@@ -28,6 +28,7 @@ Plugin 'jiangmiao/auto-pairs'
 " Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'    
 Plugin 'tpope/vim-commentary'
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()  
 " filetype plugin indent on 
