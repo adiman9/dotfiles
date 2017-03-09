@@ -6,13 +6,13 @@ snippet uir "Angular UI Router Config" b
 .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
   $stateProvider
     .state('${1:State}', {
-	  url: '${2:URL}',
-	  template: '<${3:tag}></$3>',
-	  resolve: {
-	    {$4:name}: ['{$5: deps}', () => {
+		url: '${2:URL}',
+		template: '<${3:tag}></$3>',
+		resolve: {
+			{$4:name}: ['{$5: deps}', () => {
 
-	    }] 
-	  }
+			}] 
+		}
 	});
 
   $urlRouterProvider.otherwise('/');
