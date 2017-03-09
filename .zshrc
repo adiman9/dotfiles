@@ -1,10 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/home/adiman/anaconda3/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
   export ZSH=~/.oh-my-zsh
 
   . ~/scripts/z.sh
+
+  eval `ssh-agent -s`
+
+export VISUAL="vim"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -24,7 +29,8 @@ alias 'home'='cd /var/www/html'
 alias 'metavnc'='ssh -L 5901:127.0.0.1:5901 -N -f -l adiman 46.101.83.21; xtightvncviewer localhost:5901'
 alias tmux='tmux -2'
 alias tmdev='sh ~/scripts/tmux-dev.sh'
-alias socpush='cd ~/Code\ Projects/Social\ Studies/webApp/ && npm run build && cp -r ~/Code\ Projects/Social\ Studies/webApp/images ~/Code\ Projects/Social\ Studies/webApp/build && rsync -av ~/Code\ Projects/Social\ Studies/webApp/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/socialstudies'
+alias socpush='cd ~/Code\ Projects/Social\ Studies/webApp/ && npm run build && cp -r ~/Code\ Projects/Social\ Studies/webApp/images ~/Code\ Projects/Social\ Studies/webApp/build && mv ~/Code\ Projects/Social\ Studies/webApp/build/font/ ~/Code\ Projects/Social\ Studies/webApp/build/css/ && rsync -av ~/Code\ Projects/Social\ Studies/webApp/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/socialstudies'
+alias robpush='cd ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn && npm run build && rsync -av ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/robsayer'
 alias bashrc='vim ~/.bashrc'
 alias code='cd ~/Code\ Projects/'
 alias sz='source ~/.zshrc'
@@ -104,3 +110,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+PATH=$PATH:~/.gem/ruby/2.4.0/bin/

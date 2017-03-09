@@ -10,6 +10,8 @@ esac
 
 export VISUAL="vim"
 
+eval `ssh-agent -s`
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -135,3 +137,6 @@ if ! shopt -oq posix; then
   fi
 fi
 export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/usr/local/lib/node_modules
+
+# added by Anaconda3 4.2.0 installer
+export PATH="/home/adiman/anaconda3/bin:$PATH"
