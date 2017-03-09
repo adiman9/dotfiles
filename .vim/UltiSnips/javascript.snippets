@@ -2,12 +2,29 @@ snippet todo "Javascript TODO reminder" b
 // TODO ${1:desc} `!v strftime("%c")`
 endsnippet
 
+snippet uir "Angular UI Router Config" b
+.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
+  $stateProvider
+    .state('${1:State}', {
+	  url: '${2:URL}',
+	  template: '<${3:tag}></$3>',
+	  resolve: {
+	    {$4:name}: ['{$5: deps}', () => {
+
+	    }] 
+	  }
+	});
+
+  $urlRouterProvider.otherwise('/');
+}])
+endsnippet
+
 snippet ngcomp "Angular Component in ES6" b
 const ${1:ComponentName} = {
-    bindings: {
-        ${2:Name}: '<'
-    },
-    template: \`
+  bindings: {
+    ${2:Name}: '<'
+  },
+  template: \`
 		$0
   \`
 };
