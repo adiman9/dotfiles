@@ -6,14 +6,14 @@ snippet uir "Angular UI Router Config" b
 .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
   $stateProvider
     .state('${1:State}', {
-		url: '${2:URL}',
-		template: '<${3:tag}></$3>',
-		resolve: {
-			${4:name}: ['${5: deps}', () => {
+      url: '${2:URL}',
+      template: '<${3:tag}></$3>',
+      resolve: {
+        ${4:name}: ['${5: deps}', () => {
 
-			}] 
-		}
-	});
+        }] 
+      }
+    });
 
   $urlRouterProvider.otherwise('/');
 }])
@@ -71,14 +71,14 @@ endsnippet
 snippet ngdir "Angular Directive in ES6 using const"
 import angular from 'angular';
 
-const ${1:DirectiveName}= ($2) => ({
+const ${1:DirectiveName}= () => ({
   restrict: 'A',
   link($scope, $element, $attrs) {
 	$0
   }
 });
 
-$1.$inject = ['$2'];
+$1.$inject = [];
 
 export default $1;
 endsnippet
@@ -87,7 +87,7 @@ snippet ngdirclass "Angular Directive in ES6 using class"
 import angular from 'angular';
 
 class ${1:DirectiveName}{
-  constructor($2) {
+  constructor() {
     this.restrict = 'A';
 	// Using this. to add any injected params to the class
   }
@@ -96,7 +96,7 @@ class ${1:DirectiveName}{
   }
 }
 
-TodoAutoFocus.$inject = ['$2'];
+TodoAutoFocus.$inject = [];
 
 export default $1;
 endsnippet
