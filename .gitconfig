@@ -21,3 +21,5 @@
     r2 = reset HEAD^^
 [pull]
 	rebase = true
+[core]
+	editor = /usr/bin/vim
