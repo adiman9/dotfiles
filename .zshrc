@@ -113,3 +113,6 @@ source $ZSH/oh-my-zsh.sh
 #
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 PATH=$PATH:~/.gem/ruby/2.4.0/bin/
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
