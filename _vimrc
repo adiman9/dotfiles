@@ -88,10 +88,10 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 set expandtab
 set smarttab
 
-"making tab = 4 spaces
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+"making tab = 2 spaces
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 " Linebreak on 500 characters
 set lbr
