@@ -119,6 +119,6 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
     ssh-add
 fi
 
-if [ -n "$SSH_AUTH_SOCK" ] ; then
-    eval "/usr/bin/ssh-agent -k"
-fi
+# if [ -n "$SSH_AUTH_SOCK" ] ; then
+#     eval "/usr/bin/ssh-agent -k"
+# fi
