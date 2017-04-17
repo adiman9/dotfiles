@@ -3,11 +3,9 @@
 export PATH="/home/adiman/anaconda3/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
-  . ~/scripts/z.sh
-
-  eval `ssh-agent -s`
+. ~/scripts/z.sh
 
 export VISUAL="vim"
 
@@ -114,11 +112,11 @@ source $ZSH/oh-my-zsh.sh
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 PATH=$PATH:~/.gem/ruby/2.4.0/bin/
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
+if [ -n "$SSH_AUTH_SOCK" ] ; then
     eval "$(ssh-agent -s)"
     ssh-add
 fi
 
-# if [ -n "$SSH_AUTH_SOCK" ] ; then
-#     eval "/usr/bin/ssh-agent -k"
-# fi
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval "/usr/bin/ssh-agent -k"
+fi
