@@ -18,13 +18,18 @@ tmux new-session -d -s dev -n vim #"vim -S ~/.vim/sessions/kittybusiness"
 tmux splitw -v -p 25 -t dev
 tmux selectp -t 1
 tmux splitw -h -p 50 -t dev
+tmux selectp -t 1
+tmux send-keys 'eval "$(ssh-agent -s)"' C-m
+tmux send-keys 'ssh-add' C-m
 tmux new-window -t dev:1 -n server
 tmux selectp -t dev:1
 tmux send-keys 'npm run dev' C-m
 tmux select-window -t 0
+tmux selectp -t 2
 tmux send-keys 'npm test' C-m
 tmux selectp -t 0
 tmux send-keys 'vim' C-m
+tmux selectp -t 1
 
 # Finished setup, attach to the tmux session!
 tmux attach-session -t dev

@@ -111,12 +111,3 @@ source $ZSH/oh-my-zsh.sh
 #
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 PATH=$PATH:~/.gem/ruby/2.4.0/bin/
-
-if [ -n "$SSH_AUTH_SOCK" ] ; then
-    eval "$(ssh-agent -s)"
-    ssh-add
-fi
-
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval "/usr/bin/ssh-agent -k"
-fi
