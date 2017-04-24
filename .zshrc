@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 PATH=$PATH:~/.gem/ruby/2.4.0/bin/
 
-export PATH=${HOME}/.pyenv/versions/2.7.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=${HOME}/.pyenv/shims:${HOME}/.pyenv/versions/2.7.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export HEADSPIN_HOME=$HOME/headspinio
 . $HEADSPIN_HOME/devtools/etc/bash_profile
 
