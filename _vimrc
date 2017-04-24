@@ -325,5 +325,7 @@ nmap <leader>df :Gdiff<cr>
 "nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
 
-inoremap <C-p> :b<space>
-nnoremap <C-p> :b<space>
+inoremap <C-p><leader> :b<space>
+nnoremap <C-p><leader> :b<space>
+inoremap <C-p>v :vsplit<CR>:b<space>
+nnoremap <C-p>v :vsplit<CR>:b<space>
