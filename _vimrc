@@ -29,8 +29,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'christoomey/vim-tmux-navigator'    
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'leafgarland/typescript-vim'
+" Plugin 'wookiehangover/jshint.vim'
+" Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()  
 " filetype plugin indent on 
@@ -94,6 +95,9 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+
+" setting mapping delay and keycode delay respectively
+set timeoutlen=500 ttimeoutlen=0
 
 " Linebreak on 500 characters
 set lbr
