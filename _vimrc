@@ -30,6 +30,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'wookiehangover/jshint.vim'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()  
 " filetype plugin indent on 
