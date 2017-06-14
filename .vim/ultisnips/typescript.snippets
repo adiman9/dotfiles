@@ -1,0 +1,23 @@
+snippet todo "Javascript TODO reminder" b
+// TODO ${1:desc} `!v strftime("%c")`
+endsnippet
+
+snippet class "Javascript ES6 Class"
+class ${1:ClassName}{
+  constructor($2) {
+	$0
+  }
+}
+
+export default $1;
+endsnippet
+
+snippet fn "A standard ES5 JS function"
+function ${1:functionName}(${2:functionArgs}){
+	$0
+}
+endsnippet
+
+snippet cl "add a console.log statement"
+console.log($0);
+endsnippet
