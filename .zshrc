@@ -33,6 +33,7 @@ alias tmhs='sh ~/scripts/tmux-hs.sh'
 alias bashrc='vim ~/.bashrc'
 alias code='cd ~/Code\ Projects/'
 alias sz='source ~/.zshrc'
+alias workoff='deactivate'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
