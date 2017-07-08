@@ -30,6 +30,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'wookiehangover/jshint.vim'
 " Plugin 'Valloric/YouCompleteMe'
 
