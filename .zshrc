@@ -128,3 +128,5 @@ if [ -d $HEADSPIN_HOME  ]; then
 
   eval "$(pyenv init -)"
 fi
+
+export PATH="${HOME}/Code Projects/devtools:$PATH"
