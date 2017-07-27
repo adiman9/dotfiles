@@ -112,21 +112,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-PATH=$PATH:~/.gem/ruby/2.4.0/bin/
 
 export HEADSPIN_HOME=$HOME/headspinio
-if [ -d $HEADSPIN_HOME  ]; then
-  export PATH=${HOME}/.pyenv/shims:${HOME}/.pyenv/versions/2.7.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-  . $HEADSPIN_HOME/devtools/etc/bash_profile
 
-  export WORKON_HOME=$HOME/.virtualenvs
-  . $HOME/.pyenv/versions/2.7.10/bin/virtualenvwrapper.sh
-  workon headspin
+export PATH=${HOME}/.pyenv/shims:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${HOME}/.gem/ruby/2.4.0/bin/
+export WORKON_HOME=$HOME/.virtualenvs
+. $HOME/.pyenv/versions/3.6.1/bin/virtualenvwrapper.sh
 
-# ssh-add $HEADSPIN_HOME/keys-red/pbox_id_rsa 2>/dev/null
-  export PATH="/usr/local/sbin:$PATH"
+export PATH="${HOME}/Code Projects/devtools:${HOME}/code/devtools:$PATH"
 
-  eval "$(pyenv init -)"
-fi
-
-export PATH="${HOME}/Code Projects/devtools:$PATH"
+eval "$(pyenv init -)"
