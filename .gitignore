@@ -5,7 +5,8 @@ gnore everything
 !/scripts/
 !.bashrc
 !.vim/*
-!.vim/ultisnips/*
+!.vim/**/*
+!.vim/UltiSnips/*
 !.gitignore
 !_vimrc
 !.tmux.conf
