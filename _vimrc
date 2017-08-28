@@ -33,6 +33,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'wookiehangover/jshint.vim'
 " Plugin 'Valloric/YouCompleteMe'
+" Plugin 'prabirshrestha/asyncomplete.vim'
 
 call vundle#end()  
 " filetype plugin indent on 
