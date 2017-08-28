@@ -1,12 +1,10 @@
-gnore everything
-*
+ignore everything
+/*
+/*/
 # And all the file types you're interested in.
-!scripts/*
 !/scripts/
 !.bashrc
-!.vim/*
-!.vim/**/*
-!.vim/UltiSnips/*
+!.vim/
 !.gitignore
 !_vimrc
 !.tmux.conf
