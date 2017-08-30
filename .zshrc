@@ -113,12 +113,15 @@ source $ZSH/oh-my-zsh.sh
 #
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
+
 export HEADSPIN_HOME=$HOME/headspinio
 
-export PATH=${HOME}/.pyenv/shims:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${HOME}/.gem/ruby/2.4.0/bin/
+export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.4.0/bin/
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
-. $HOME/.pyenv/versions/3.6.1/bin/virtualenvwrapper.sh
+source $HOME/.pyenv/versions/3.6.1/bin/virtualenvwrapper.sh
 
-export PATH="${HOME}/Code Projects/devtools:${HOME}/code/devtools:$PATH"
+export PATH="$HOME/code/devtools:$PATH"
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 eval "$(pyenv init -)"
