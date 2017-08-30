@@ -25,18 +25,26 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 " Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'    
 Plugin 'tpope/vim-commentary'
+Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'wookiehangover/jshint.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+
 " Plugin 'prabirshrestha/asyncomplete.vim'
+" Plugin 'prabirshrestha/async.vim'
+" Plugin 'prabirshrestha/vim-lsp'
+" Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+" Plugin 'yami-beta/asyncomplete-omni.vim'
+" Plugin 'runoshun/tscompletejob'
+" Plugin 'prabirshrestha/asyncomplete-tscompletejob.vim'
 
 call vundle#end()  
-" filetype plugin indent on 
+filetype plugin indent on
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -52,6 +60,10 @@ if has("gui_running")
   endif
 endif
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-j>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -84,7 +96,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 "Enable yanking to system clipboard
 "set clipboard=unnamedplus
@@ -178,27 +189,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
-filetype plugin on
+" filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-
-let g:neocomplete#enable_at_startup = 1
-
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
