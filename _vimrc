@@ -23,7 +23,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
-" Plugin 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'    
@@ -298,7 +298,8 @@ nnoremap <leader>v :vsplit<space>
 nnoremap <leader>s :split<space>
 
 "Mapping tab to be emmet expander key"
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" imap <expr> <C-u> emmet#expandAbbrIntelligent("\<C-u>")
+imap q<tab> <C-y>,
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
