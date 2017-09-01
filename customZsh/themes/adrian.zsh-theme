@@ -13,7 +13,7 @@ local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
 function _current_python() {
-  echo $(pyenv version-name)
+  echo "%{$fg[cyan]%}$(pyenv version-name)%{$reset_color%}"
 }
 function _current_dir() {
   local _max_pwd_length="65"
