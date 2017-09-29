@@ -36,6 +36,7 @@ alias code='cd ~/Code\ Projects/'
 alias sz='source ~/.zshrc'
 alias workoff='deactivate'
 alias mew='cd ~/code/myetherwallet && live-server'
+alias c="cd ~/code"
 
 
 # Uncomment the following line to use case-sensitive completion.
