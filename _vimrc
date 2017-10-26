@@ -221,6 +221,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * NERDTree
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 let g:airline#extensions#tabline#enabled = 1
 
