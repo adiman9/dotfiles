@@ -34,6 +34,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'wookiehangover/jshint.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tomlion/vim-solidity'
+Plugin 'dmdque/solidity.vim'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
@@ -98,6 +100,11 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+augroup quickfix
+  autocmd!
+  autocmd QuickFixCmdPost make nested copen
+augroup END
 
 "Enable yanking to system clipboard
 "set clipboard=unnamedplus
