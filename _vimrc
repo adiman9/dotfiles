@@ -16,6 +16,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 " Plugin 'kien/ctrlp.vim'
@@ -25,7 +26,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'christoomey/vim-tmux-navigator'    
 Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
@@ -200,6 +202,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
 " filetype plugin on
 set omnifunc=syntaxcomplete#Complete

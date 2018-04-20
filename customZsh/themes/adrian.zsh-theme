@@ -1,7 +1,7 @@
 # ADRIAN ZSH Theme, fork of AVIT
 
 PROMPT='
-$(_current_python) $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+$(_current_python) $(_current_node) $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
@@ -14,6 +14,9 @@ local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
 function _current_python() {
   echo "%{$fg[cyan]%}$(pyenv version-name)%{$reset_color%}"
+}
+function _current_node() {
+  echo "%{$fg[gray]%}$(nvm current)%{$reset_color%}"
 }
 function _current_dir() {
   local _max_pwd_length="65"

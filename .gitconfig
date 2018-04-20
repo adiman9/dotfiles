@@ -1,6 +1,6 @@
 [user]
 	name = Adrian Henry
-	email = adrian@headspin.io
+	email = adrian@hungryturtlecode.com
 [credential]
 	helper = cache
 [alias]
@@ -23,3 +23,8 @@
 	rebase = true
 [core]
 	editor = /usr/bin/vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
