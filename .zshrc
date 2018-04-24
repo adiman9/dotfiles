@@ -128,6 +128,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
 . $HOME/scripts/virtualenvwrapper.sh
 
+export PATH=$HOME/anaconda3/bin:$PATH
 export PATH="$HOME/code/devtools:$PATH"
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
