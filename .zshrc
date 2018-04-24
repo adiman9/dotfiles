@@ -33,7 +33,7 @@ alias robpush='cd ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn && np
 alias tmhs='sh ~/scripts/tmux-hs.sh'
 alias bashrc='vim ~/.bashrc'
 alias code='cd ~/Code\ Projects/'
-alias sz='source ~/.zshrc'
+alias sz='. ~/.zshrc'
 alias workoff='deactivate'
 alias mew='cd ~/code/myetherwallet && live-server'
 alias c="cd ~/code"
@@ -83,7 +83,7 @@ alias c="cd ~/code"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+. $ZSH/oh-my-zsh.sh
 
 # User configuration
 . ~/scripts/z.sh
@@ -124,7 +124,7 @@ export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bi
 export PATH="$HOME/.rbenv/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
-source $HOME/scripts/virtualenvwrapper.sh
+. $HOME/scripts/virtualenvwrapper.sh
 
 export PATH="$HOME/code/devtools:$PATH"
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
