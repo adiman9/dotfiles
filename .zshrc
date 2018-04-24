@@ -124,7 +124,7 @@ export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bi
 export PATH="$HOME/.rbenv/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
-source $HOME/.pyenv/versions/3.6.1/bin/virtualenvwrapper.sh
+source $HOME/scripts/virtualenvwrapper.sh
 
 export PATH="$HOME/code/devtools:$PATH"
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
