@@ -65,7 +65,8 @@ main() {
     printf "Error: git clone of oh-my-zsh repo failed\n"
     exit 1
   }
-
+  
+  git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 
   # printf "${BLUE}Looking for an existing zsh config...${NORMAL}\n"
   # if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then

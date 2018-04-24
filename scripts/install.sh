@@ -4,4 +4,22 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.9/install.sh | bash
 vim -c VundleUpdate -c quitall
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  # ...
+  sudo apt-get install zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  # Mac OSX
+  brew install zsh
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+  # POSIX compatibility layer and Linux environment emulation for Windows
+elif [[ "$OSTYPE" == "msys" ]]; then
+  # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+elif [[ "$OSTYPE" == "win32" ]]; then
+  # I'm not sure this can happen.
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  # ...
+  pkg install zsh
+else
+  # Unknown.
+fi
 ~/scripts/zsh-install.sh
