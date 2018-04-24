@@ -35,9 +35,10 @@ Plugin 'SirVer/ultisnips'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'wookiehangover/jshint.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomlion/vim-solidity'
 Plugin 'dmdque/solidity.vim'
+Plugin 'maralla/completor.vim'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
@@ -65,11 +66,19 @@ if has("gui_running")
 endif
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:SuperTabDefaultCompletionType = '<C-j>'
+" let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:SuperTabDefaultCompletionType = '<C-j>'
+
+let g:completor_refresh_always = 0
+set completeopt-=longest
+set completeopt+=menuone
+set completeopt-=menu
+if &completeopt !~# 'noinsert\|noselect'
+  set completeopt+=noselect
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
