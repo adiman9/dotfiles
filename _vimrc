@@ -339,8 +339,10 @@ map <leader><leader>k <Plug>(easymotion-k)
 " enabling key map to allow cntl+c/v copy pasting
 vnoremap <C-c> "+y
 vnoremap <C-c><C-c> "+yy
-inoremap <C-v> <Esc>"+p
-nnoremap <C-v> "+p
+inoremap <C-v> <Esc>j"+p`]
+nnoremap <C-v> j"+p`]
+nnoremap <leader>pp o<Esc>"+p`]
+inoremap <leader>pp <Esc>"+p`]a
 
 "commenting
 nmap <C-_> gcc
