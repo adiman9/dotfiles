@@ -286,6 +286,7 @@ nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprev<CR>
 nnoremap <leader>bq :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <leader>bd :%bd<CR>:e#<CR>:NERDTreeToggle<CR><C-w>l
+nnoremap <leader>ba :%bd<CR>
 
 
 "make jk the hotkey to return to normal mode"
