@@ -750,8 +750,10 @@ function workon {
     # Deactivate any current environment "destructively"
     # before switching so we use our override function,
     # if it exists.
-    type deactivate >/dev/null 2>&1
-    if [ $? -eq 0 ]
+    # type deactivate >/dev/null 2>&1
+    # if [ $? -eq 0 ]
+    nametype="$(type deactivate)"
+    if [ "${nametype##* }" == "function" ]
     then
         deactivate
         unset -f deactivate >/dev/null 2>&1
