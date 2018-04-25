@@ -80,11 +80,6 @@ if &completeopt !~# 'noinsert\|noselect'
   set completeopt+=noselect
 endif
 
-" enable line numbers
-let NERDTreeShowLineNumbers=1
-" make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""    START CUSTOM SETTINGS
@@ -249,6 +244,11 @@ autocmd vimenter * NERDTree
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -285,6 +285,7 @@ command! Maketags !ctags -R --exclude=.git --exclude=node_modules
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprev<CR>
 nnoremap <leader>bq :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>bd :%bd<CR>:e#<CR>:NERDTreeToggle<CR><C-w>l
 
 
 "make jk the hotkey to return to normal mode"
