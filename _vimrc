@@ -39,6 +39,8 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tomlion/vim-solidity'
 Plugin 'dmdque/solidity.vim'
 Plugin 'maralla/completor.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'sheerun/vim-polyglot'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
@@ -86,6 +88,7 @@ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set encoding=UTF-8
 let mapleader=" "
 
 set t_Co=256
@@ -103,6 +106,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " Enable syntax highlighting
 syntax enable
+syntax on
 
 let g:UltiSnipsEditSplit="vertical"
 
@@ -326,8 +330,8 @@ nnoremap <leader><leader>q :q!<CR>
 nnoremap <leader>o :e<space>
 
 "open new file in splits
-nnoremap <leader>v :vsplit<space>
-nnoremap <leader>s :split<space>
+nnoremap <leader>v :vertical sb<space>
+nnoremap <leader>s :sb<space>
 
 "Mapping tab to be emmet expander key"
 " imap <expr> <C-u> emmet#expandAbbrIntelligent("\<C-u>")

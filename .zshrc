@@ -23,15 +23,13 @@ fi
 
 alias 'sshadi'='ssh adiman999@adrianhenrydev.com'
 alias 'ssht'='ssh root@104.131.4.253'
-alias 'ht'='cd /var/www/html/wp-content/themes/hungryturtledev/'
-alias 'home'='cd /var/www/html'
 alias 'metavnc'='ssh -L 5901:127.0.0.1:5901 -N -f -l adiman 46.101.83.21; xtightvncviewer localhost:5901'
 alias tmux='tmux -2'
 alias tmdev='sh ~/scripts/tmux-dev.sh'
 alias socpush='cd ~/Code\ Projects/Social\ Studies/webApp/ && npm run build && cp -r ~/Code\ Projects/Social\ Studies/webApp/images ~/Code\ Projects/Social\ Studies/webApp/build && mv ~/Code\ Projects/Social\ Studies/webApp/build/font/ ~/Code\ Projects/Social\ Studies/webApp/build/css/ && rsync -av ~/Code\ Projects/Social\ Studies/webApp/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/socialstudies'
 alias robpush='cd ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn && npm run build && rsync -av ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/robsayer'
-alias tmhs='sh ~/scripts/tmux-hs.sh'
 alias bashrc='vim ~/.bashrc'
+alias zshrc='vim ~/.zshrc'
 alias code='cd ~/Code\ Projects/'
 alias sz='. ~/.zshrc'
 alias workoff='deactivate'
@@ -121,6 +119,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
 export HEADSPIN_HOME=$HOME/headspinio
+export HUNGRY_TURTLE_HOME=$HOME/code/hungryturtlecode
+alias h="cd $HUNGRY_TURTLE_HOME"
 
 export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.4.0/bin:$HOME/anaconda3/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -141,3 +141,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 eval "$(pipenv --completion)"
+
+export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+
+export GOOGLE_APPLICATION_CREDENTIALS=~/Downloads/Outlier-dcf10621ffca.json
+
+export EMSDK=$HOME/code/emsdk
+export EM_CONFIG=$HOME/.emscripten
+export BINARYEN_ROOT=$HOME/code/emsdk/clang/e1.38.0_64bit/binaryen
+export EMSCRIPTEN=$HOME/code/emsdk/emscripten/1.38.0
+
+export PATH=$HOME/code/emsdk:$PATH
+export PATH=$HOME/code/emsdk/clang/e1.38.0_64bit:$PATH
+export PATH=$HOME/code/emsdk/node/8.9.1_64bit/bin:$PATH
+export PATH=$HOME/code/emsdk/emscripten/1.38.0:$PATH
+export PATH=/usr/local/opt/llvm/bin:$PATH
