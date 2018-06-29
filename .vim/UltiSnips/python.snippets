@@ -1,3 +1,11 @@
-snippet cl "add a logger statement"
+snippet lo "add a logger statement"
 logger.$1($0)
+endsnippet
+
+snippet cl "add a print statement"
+print($0)
+endsnippet
+
+snippet todo "Python TODO reminder" b
+# TODO ${1:desc} `!v strftime("%c")`
 endsnippet
