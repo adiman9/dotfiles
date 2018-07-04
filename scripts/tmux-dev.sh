@@ -19,8 +19,6 @@ tmux splitw -v -p 25 -t dev
 tmux selectp -t 1
 tmux splitw -h -p 50 -t dev
 tmux selectp -t 1
-tmux send-keys 'eval "$(ssh-agent -s)"' C-m
-tmux send-keys 'ssh-add' C-m
 tmux new-window -t dev:1 -n server
 tmux selectp -t dev:1
 tmux send-keys 'npm run dev' C-m
