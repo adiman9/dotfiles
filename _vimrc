@@ -43,6 +43,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
+Plugin 'junegunn/limelight.vim'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
@@ -376,3 +377,14 @@ inoremap <C-p> :b<space>
 nnoremap <C-p> :b<space>
 inoremap <C-p>v :vsplit<CR>:b<space>
 nnoremap <C-p>v :vsplit<CR>:b<space>
+
+function! s:goyo_enter()
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
