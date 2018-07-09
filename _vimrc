@@ -3,6 +3,9 @@
 "    git clone https://github.com/tpope/vim-surround 
 "    git clone https://github.com/pangloss/vim-javascript
 "
+if has('python3')
+  silent! python3 1
+endif
 
 set nocompatible
 filetype off  
