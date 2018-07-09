@@ -124,7 +124,7 @@ alias h="cd $HUNGRY_TURTLE_HOME"
 
 export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.4.0/bin:$HOME/anaconda3/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
 export WORKON_HOME=$HOME/.virtualenvs
 . $HOME/scripts/virtualenvwrapper.sh
 
