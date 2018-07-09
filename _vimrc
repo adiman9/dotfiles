@@ -41,6 +41,8 @@ Plugin 'dmdque/solidity.vim'
 Plugin 'maralla/completor.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'junegunn/goyo.vim'
+Plugin 'amix/vim-zenroom2'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
@@ -354,6 +356,10 @@ inoremap <C-v> <Esc>j"+p`]
 nnoremap <C-v> j"+p`]
 nnoremap <leader>pp o<Esc>"+p`]
 inoremap <leader>pp <Esc>"+p`]a
+
+" Goyo writing environment setup
+inoremap <leader>wm <Esc>:Goyo<cr>a
+nnoremap <leader>wm :Goyo<cr>
 
 "commenting
 nmap <C-_> gcc
