@@ -155,3 +155,9 @@ export PATH=$HOME/code/emsdk/clang/e1.38.0_64bit:$PATH
 export PATH=$HOME/code/emsdk/node/8.9.1_64bit/bin:$PATH
 export PATH=$HOME/code/emsdk/emscripten/1.38.0:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/completion.zsh.inc'; fi
