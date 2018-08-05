@@ -144,8 +144,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 
-export GOOGLE_APPLICATION_CREDENTIALS=~/Downloads/Outlier-dcf10621ffca.json
-
 export EMSDK=$HOME/code/emsdk
 export EM_CONFIG=$HOME/.emscripten
 export BINARYEN_ROOT=$HOME/code/emsdk/clang/e1.38.0_64bit/binaryen
