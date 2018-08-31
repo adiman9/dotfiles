@@ -141,6 +141,6 @@ export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/us
 # added by Anaconda3 4.2.0 installer
 export PATH="/home/adiman/anaconda3/bin:$PATH"
 
-export NVM_DIR="/Users/adrian/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
