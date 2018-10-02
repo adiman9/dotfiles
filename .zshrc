@@ -133,8 +133,9 @@ export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/code/devtools:$PATH
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
-eval "$(pyenv init -)"
-eval "$(rbenv init -)"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 export GOPATH=$HOME/code
 
@@ -154,6 +155,8 @@ export PATH=$HOME/code/emsdk/clang/e1.38.0_64bit:$PATH
 export PATH=$HOME/code/emsdk/node/8.9.1_64bit/bin:$PATH
 export PATH=$HOME/code/emsdk/emscripten/1.38.0:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
+export PATH="$HOME/.jenv/bin:$PATH"
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/path.zsh.inc'; fi
