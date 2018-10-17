@@ -137,6 +137,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
+command -v keychain >/dev/null 2>&1 && {eval $(keychain --eval --quiet id_rsa)>&2;}
+
 export GOPATH=$HOME/code
 
 export NVM_DIR="$HOME/.nvm"
