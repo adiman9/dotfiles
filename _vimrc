@@ -43,7 +43,7 @@ Plugin 'tomlion/vim-solidity'
 Plugin 'dmdque/solidity.vim'
 Plugin 'maralla/completor.vim'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'sheerun/vim-polyglot'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 Plugin 'junegunn/limelight.vim'
@@ -391,3 +391,6 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+au FileType python map <silent> <leader>b oimport pdb; pdb.set_trace()<esc>
+au FileType python map <silent> <leader>B Oimport pdb; pdb.set_trace()<esc>
