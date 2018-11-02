@@ -35,7 +35,8 @@ alias sz='. ~/.zshrc'
 alias workoff='deactivate'
 alias mew='cd ~/code/myetherwallet && live-server'
 alias c="cd ~/code"
-alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev-api.outlierintelligence.com"
+alias i="cd ~/infosec"
+alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev.outlierintelligence.com"
 
 
 # Uncomment the following line to use case-sensitive completion.
