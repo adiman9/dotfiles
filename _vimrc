@@ -381,6 +381,9 @@ nnoremap <C-p> :b<space>
 inoremap <C-p>v :vsplit<CR>:b<space>
 nnoremap <C-p>v :vsplit<CR>:b<space>
 
+nnoremap <leader>sp :set paste<cr>
+nnoremap <leader>np :set nopaste<cr>
+
 function! s:goyo_enter()
   Limelight
 endfunction
