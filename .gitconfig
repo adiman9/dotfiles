@@ -26,6 +26,7 @@
 	rebase = true
 [core]
 	editor = /usr/bin/vim
+	autocrlf = on
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
