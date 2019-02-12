@@ -124,24 +124,21 @@ export HEADSPIN_HOME=$HOME/headspinio
 export HUNGRY_TURTLE_HOME=$HOME/code/hungryturtlecode
 alias h="cd $HUNGRY_TURTLE_HOME"
 
-export PATH=$HOME/code/devtools:$PATH
-export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.6.0/bin:$HOME/anaconda3/bin
+export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.4.0/bin:$HOME/anaconda3/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
 export WORKON_HOME=$HOME/.virtualenvs
 . $HOME/scripts/virtualenvwrapper.sh
 
 export PATH=/usr/local/go/bin:$PATH
+export PATH=$HOME/code/devtools:$PATH
 export PATH=.yarn/bin:$PATH
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 command -v keychain >/dev/null 2>&1 && {eval $(keychain --eval --quiet id_rsa)>&2;}
 
-export GOPATH=$HOME/code
+export GOPATH=$HOME/code/go
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -160,6 +157,10 @@ export PATH=$HOME/code/emsdk/node/8.9.1_64bit/bin:$PATH
 export PATH=$HOME/code/emsdk/emscripten/1.38.0:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
 export PATH="$HOME/.jenv/bin:$PATH"
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 
 # The next line updates PATH for the Google Cloud SDK.
