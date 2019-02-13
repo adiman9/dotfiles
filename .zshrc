@@ -37,6 +37,7 @@ alias mew='cd ~/code/myetherwallet && live-server'
 alias c="cd ~/code"
 alias i="cd ~/infosec"
 alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev.outlierintelligence.com"
+alias cliq="$BEVRLY_HOME/devtools/connectCliquot.sh"
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -121,8 +122,10 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
 export HEADSPIN_HOME=$HOME/headspinio
+export BEVRLY_HOME=$HOME/code/bevrly
 export HUNGRY_TURTLE_HOME=$HOME/code/hungryturtlecode
 alias h="cd $HUNGRY_TURTLE_HOME"
+alias b="cd $BEVRLY_HOME"
 
 export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.4.0/bin:$HOME/anaconda3/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
