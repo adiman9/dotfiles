@@ -148,7 +148,7 @@ describe('${4:What To Test}', function(){
 endsnippet
 
 snippet fn "A standard ES5 JS function"
-function ${1:functionName}(${2:functionArgs}){
+function ${1:functionName}(${2}){
 	$0
 }
 endsnippet
@@ -194,3 +194,44 @@ else {
 	$0
 }
 endsnippet
+
+snippet for "add a for loop"
+for ($1) {
+	$0
+}
+endsnippet
+
+snippet foro "add a for of loop"
+for (let $1 of $2) {
+	$0
+}
+endsnippet
+
+snippet getel "get element by Id"
+document.getElementById('$0');
+endsnippet
+
+snippet getcon "get element by Id"
+const ctx = canvas.getContext('2d');
+endsnippet
+
+snippet fillr "fill rect"
+ctx.fillRect($0);
+endsnippet
+
+snippet xy "create x y object"
+{x: $1, y: $2}
+endsnippet
+
+snippet fills "fill style"
+ctx.fillStyle = $0;
+endsnippet
+
+snippet sw "switch statement"
+switch($1) {
+	case $2: {
+		$3
+	}
+}
+endsnippet
+
