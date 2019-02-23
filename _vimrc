@@ -107,8 +107,8 @@ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=whit
 set relativenumber
 set number
 
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+highlight ColorColumn ctermbg=lightgrey
+" call matchadd('ColorColumn', '\%81v', 100)
 
 " Enable syntax highlighting
 syntax enable
@@ -288,9 +288,8 @@ command! Maketags !ctags -R --exclude=.git --exclude=node_modules
 "noremap a; <Esc><S-A>;<Esc>hi{<CR>}<Esc>O
 
 
-
-
-
+autocmd FileType python setlocal cc=81
+" autocmd FileType python ~/code/bevrly/* setlocal cc=101
 
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprev<CR>
@@ -360,6 +359,7 @@ inoremap <C-v> <Esc>j"+p`]
 nnoremap <C-v> j"+p`]
 nnoremap <leader>pp o<Esc>"+p`]
 inoremap <leader>pp <Esc>"+p`]a
+vnoremap <leader>yc "+y
 
 " Goyo writing environment setup
 inoremap <leader>wm <Esc>:Goyo<cr>a

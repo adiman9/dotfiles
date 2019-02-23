@@ -1,14 +1,14 @@
 # ADRIAN ZSH Theme, fork of AVIT
 
 PROMPT='
-$(_current_python) $(_current_node) $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+$(_current_python) $(_current_node) $(_user_host)${_current_dir}$(__docker_machine_ps1) $(git_prompt_info) $(_ruby_version)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
 
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
-local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
+local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%}"
 local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 

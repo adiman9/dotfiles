@@ -37,7 +37,6 @@ alias mew='cd ~/code/myetherwallet && live-server'
 alias c="cd ~/code"
 alias i="cd ~/infosec"
 alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev.outlierintelligence.com"
-alias cliq="$BEVRLY_HOME/devtools/connectCliquot.sh"
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -171,3 +170,12 @@ if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/go
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias cliq="$BEVRLY_HOME/devtools/connectCliquot.sh"
+
+autoload bashcompinit
+bashcompinit
+
+source $HOME/scripts/docker-machine.bash
+source $HOME/scripts/docker-machine-prompt.bash
+source $HOME/scripts/docker-machine-wrapper.bash
