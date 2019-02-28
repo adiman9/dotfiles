@@ -11,4 +11,5 @@ ignore everything
 !.tmux.conf
 !.gitconfig
 !.zshrc
+!.ctags
 
