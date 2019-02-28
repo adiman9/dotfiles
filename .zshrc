@@ -38,6 +38,7 @@ alias c="cd ~/code"
 alias i="cd ~/infosec"
 alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev.outlierintelligence.com"
 
+alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
