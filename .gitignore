@@ -13,4 +13,5 @@ ignore everything
 !.zshrc
 !.ctags
 !.ctags.d/
+!.gitignore_global
 
