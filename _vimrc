@@ -384,6 +384,8 @@ nnoremap <C-p>v :vsplit<CR>:b<space>
 nnoremap <leader>sp :set paste<cr>
 nnoremap <leader>np :set nopaste<cr>
 
+nnoremap v<C-]> :set splitright<CR>:vsp <CR>:exec("tag ".expand("<cword>"))<CR>:set nosplitright<CR>
+
 function! s:goyo_enter()
   Limelight
 endfunction
