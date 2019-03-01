@@ -47,6 +47,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 Plugin 'junegunn/limelight.vim'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
