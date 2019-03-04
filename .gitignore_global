@@ -36,6 +36,8 @@
 ehthumbs.db
 Thumbs.db
 tags
+tags.lock
+tags.temp
 node_modules
 bower_components
 
