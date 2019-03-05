@@ -171,6 +171,8 @@ if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/go
 if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias cliq="$BEVRLY_HOME/devtools/connectCliquot.sh"
+alias bev="$BEVRLY_HOME/devtools/connectProd.sh"
+alias dco="docker-compose"
 
 autoload bashcompinit
 bashcompinit
