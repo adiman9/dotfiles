@@ -158,6 +158,7 @@ export PATH=$HOME/code/emsdk/node/8.9.1_64bit/bin:$PATH
 export PATH=$HOME/code/emsdk/emscripten/1.38.0:$PATH
 export PATH=/usr/local/opt/llvm/bin:$PATH
 export PATH="$HOME/.jenv/bin:$PATH"
+export PATH=$HOME/.cargo/bin:$PATH
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
