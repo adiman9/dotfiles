@@ -80,14 +80,14 @@ alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|i
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(git zsh-completions)
-autoload -U compinit && compinit
-
 . $ZSH/oh-my-zsh.sh
 
 # User configuration
 . ~/scripts/z.sh
+
+plugins=(git)
+plugins=(git zsh-completions)
+autoload -U compinit && compinit
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
