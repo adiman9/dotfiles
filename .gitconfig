@@ -22,6 +22,8 @@
     r1 = reset HEAD^
     r2 = reset HEAD^^
   cdiff = "!f() { git diff $1^ $1; }; f"
+  todo = !git diff | grep ^+.*TODO
+  atodo = !git grep TODO
 [pull]
 	rebase = true
 [core]
