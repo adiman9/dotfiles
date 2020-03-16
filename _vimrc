@@ -56,6 +56,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 " Plugin 'yami-beta/asyncomplete-omni.vim'
 " Plugin 'runoshun/tscompletejob'
 " Plugin 'prabirshrestha/asyncomplete-tscompletejob.vim'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()  
 filetype plugin indent on
@@ -100,7 +101,10 @@ let mapleader=" "
 
 set t_Co=256
 " Set the colorscheme
-colorscheme mopkai
+" colorscheme mopkai
+" colorscheme zenburn
+colorscheme gruvbox
+set background=dark
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
 " Set the hybrid numbering system. Shows absolute number of current line plus

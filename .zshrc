@@ -34,6 +34,7 @@ alias workoff='deactivate'
 alias mew='cd ~/code/myetherwallet && live-server'
 alias c="cd ~/code"
 alias i="cd ~/infosec"
+alias ctf="cd ~/ctf"
 alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev.outlierintelligence.com"
 
 alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
@@ -173,6 +174,7 @@ if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/lo
 
 alias cliq="$BEVRLY_HOME/devtools/connectCliquot.sh"
 alias bev="$BEVRLY_HOME/devtools/connectProd.sh"
+alias neo="$BEVRLY_HOME/devtools/connectNeo4j.sh"
 alias dco="docker-compose"
 
 autoload bashcompinit
