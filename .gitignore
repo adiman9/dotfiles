@@ -4,6 +4,7 @@ ignore everything
 # And all the file types you're interested in.
 !/scripts/
 !/customZsh/
+!/customZsh/*
 !.bashrc
 !.vim/
 !.gitignore

@@ -86,8 +86,11 @@ alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|i
 # User configuration
 . ~/scripts/z.sh
 
-plugins=(git)
-plugins=(git zsh-completions)
+plugins=(
+  git
+  zsh-completions
+  history-substring-search
+)
 autoload -U compinit && compinit
 
 # export MANPATH="/usr/local/man:$MANPATH"
