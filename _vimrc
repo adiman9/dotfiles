@@ -1,6 +1,5 @@
 "    git clone https://github.com/tpope/vim-commentary 
 "    git clone https://github.com/othree/javascript-libraries-syntax.vim 
-"    git clone https://github.com/tpope/vim-surround 
 "    git clone https://github.com/pangloss/vim-javascript
 "
 if has('python3')
@@ -48,6 +47,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'amix/vim-zenroom2'
 Plugin 'junegunn/limelight.vim'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'tpope/vim-surround'
 
 " Plugin 'prabirshrestha/asyncomplete.vim'
 " Plugin 'prabirshrestha/async.vim'
@@ -57,6 +57,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 " Plugin 'runoshun/tscompletejob'
 " Plugin 'prabirshrestha/asyncomplete-tscompletejob.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'neo4j-contrib/cypher-vim-syntax'
 
 call vundle#end()  
 filetype plugin indent on
@@ -111,6 +112,7 @@ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=white guibg=NONE guifg=whit
 " relative numbers of all other lines.
 set relativenumber
 set number
+set hlsearch
 
 highlight ColorColumn ctermbg=lightgrey
 " call matchadd('ColorColumn', '\%81v', 100)
@@ -133,7 +135,7 @@ augroup quickfix
 augroup END
 
 "Enable yanking to system clipboard
-"set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Text, tab and Indent related
 set expandtab
@@ -218,14 +220,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_typescript_checkers = ['tslint']
+" let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
@@ -293,7 +295,7 @@ command! Maketags !ctags -R --exclude=.git --exclude=node_modules
 "noremap a; <Esc><S-A>;<Esc>hi{<CR>}<Esc>O
 
 
-autocmd FileType python setlocal cc=81
+autocmd FileType python setlocal cc=89
 " autocmd FileType python ~/code/bevrly/* setlocal cc=101
 
 nnoremap <leader>bn :bnext<CR>
@@ -390,6 +392,9 @@ nnoremap <leader>sp :set paste<cr>
 nnoremap <leader>np :set nopaste<cr>
 
 nnoremap v<C-]> :set splitright<CR>:vsp <CR>:exec("tag ".expand("<cword>"))<CR>:set nosplitright<CR>
+
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
 
 function! s:goyo_enter()
   Limelight
