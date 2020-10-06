@@ -19,13 +19,8 @@ if [ "$TERM" = "xterm" ]; then
   export TERM=xterm-256color
 fi
 
-alias 'sshadi'='ssh adiman999@adrianhenrydev.com'
-alias 'ssht'='ssh root@104.131.4.253'
-alias 'metavnc'='ssh -L 5901:127.0.0.1:5901 -N -f -l adiman 46.101.83.21; xtightvncviewer localhost:5901'
 alias tmux='tmux -2'
 alias tmdev='sh ~/scripts/tmux-dev.sh'
-alias socpush='cd ~/Code\ Projects/Social\ Studies/webApp/ && npm run build && cp -r ~/Code\ Projects/Social\ Studies/webApp/images ~/Code\ Projects/Social\ Studies/webApp/build && mv ~/Code\ Projects/Social\ Studies/webApp/build/font/ ~/Code\ Projects/Social\ Studies/webApp/build/css/ && rsync -av ~/Code\ Projects/Social\ Studies/webApp/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/socialstudies'
-alias robpush='cd ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn && npm run build && rsync -av ~/Code\ Projects/rob\ lighting\ learning\ app/flashLearn/build/ adiman999@adrianhenrydev.com:~/public_html/testsite/robsayer'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 alias code='cd ~/Code\ Projects/'
@@ -34,8 +29,6 @@ alias workoff='deactivate'
 alias mew='cd ~/code/myetherwallet && live-server'
 alias c="cd ~/code"
 alias i="cd ~/infosec"
-alias ctf="cd ~/ctf"
-alias outlierdev="ssh -i ~/.ssh/google_compute_engine adrianhenry@dev.outlierintelligence.com"
 
 alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
@@ -76,6 +69,13 @@ alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|i
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+#
+plugins=(
+  git
+  history-substring-search
+  zsh-completions
+)
+autoload -U compinit && compinit
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -86,12 +86,6 @@ alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|i
 # User configuration
 . ~/scripts/z.sh
 
-plugins=(
-  git
-  zsh-completions
-  history-substring-search
-)
-autoload -U compinit && compinit
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -125,9 +119,12 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export HEADSPIN_HOME=$HOME/headspinio
 export BEVRLY_HOME=$HOME/code/bevrly
+export FREELANCE_HOME=$HOME/code/freelance
 export HUNGRY_TURTLE_HOME=$HOME/code/hungryturtlecode
 alias h="cd $HUNGRY_TURTLE_HOME"
 alias b="cd $BEVRLY_HOME"
+alias f="cd $FREELANCE_HOME"
+alias john="/opt/JohnTheRipper/run/john"
 
 export PATH=$HOME/.pyenv:$HOME/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.4.0/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -150,6 +147,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+# export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib32:/opt/cuda/lib64:$LD_LIBRARY_PATH
 
 export EMSDK=$HOME/code/emsdk
 export EM_CONFIG=$HOME/.emscripten
@@ -179,6 +177,7 @@ alias cliq="$BEVRLY_HOME/devtools/connectCliquot.sh"
 alias bev="$BEVRLY_HOME/devtools/connectProd.sh"
 alias neo="$BEVRLY_HOME/devtools/connectNeo4j.sh"
 alias dco="docker-compose"
+alias xcl="xclip -selection clipboard"
 
 autoload bashcompinit
 bashcompinit
