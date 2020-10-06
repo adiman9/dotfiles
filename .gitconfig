@@ -2,7 +2,7 @@
 	name = Adrian Henry
 	email = adrian@hungryturtlecode.com
 [credential]
-	helper = cache
+	helper = store
 [alias]
 	co = checkout
 	cob = checkout -b
