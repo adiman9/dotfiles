@@ -19,6 +19,14 @@ if [ "$TERM" = "xterm" ]; then
   export TERM=xterm-256color
 fi
 
+function gdiff {
+  if [ $(tput cols) -gt 200 ]; then
+    git -c "core.pager=delta --side-by-side" diff
+  else
+    git diff
+  fi
+}
+
 alias tmux='tmux -2'
 alias tmdev='sh ~/scripts/tmux-dev.sh'
 alias bashrc='vim ~/.bashrc'
@@ -185,3 +193,4 @@ bashcompinit
 source $HOME/scripts/docker-machine.bash
 source $HOME/scripts/docker-machine-prompt.bash
 source $HOME/scripts/docker-machine-wrapper.bash
+[ -f "/home/adrian/.ghcup/env" ] && source "/home/adrian/.ghcup/env" # ghcup-env
